@@ -22,3 +22,14 @@ class Film extends Media {
     print('Ceci est un Film: $titre, durée: $dureeMinutes minutes.');
   }
 }
+void main() {
+  var catalogue = <Media>[
+    Livre('1984', 'George Orwell'),
+    Film('Inception', 148),
+    Livre('Le Petit Prince', 'Antoine de Saint-Exupéry')
+  ];
+
+  for (var media in catalogue) {
+    media.afficherType();
+  }
+}
