@@ -5,15 +5,8 @@ class Livre {
 
   Livre(this.titre, this.auteur) {
     totalLivres++;
-  }  int get pages => _pages;
-
-  void afficherInfos() {
-    print('Titre: $titre, Auteur: $auteur');
   }
 
-  static void afficherTotalLivres() {
-    print('Total de livres créés: $totalLivres');
-  }
   int get pages => _pages;
 
   void afficherInfos() {
@@ -23,32 +16,24 @@ class Livre {
   static void afficherTotalLivres() {
     print('Total de livres créés: $totalLivres');
   }
-  int get pages => _pages;
+}
 
+class Roman extends Livre {
+  String genre;
+  Roman(String titre, String auteur, this.genre) : super(titre, auteur);
+
+  @override
   void afficherInfos() {
-    print('Titre: $titre, Auteur: $auteur');
+    print('Titre: $titre, Auteur: $auteur, Genre: $genre');
   }
+}
 
-  static void afficherTotalLivres() {
-    print('Total de livres créés: $totalLivres');
-  }
-  int get pages => _pages;
+void main() {
+  var l1 = Livre('1984', 'George Orwell');
+  var l2 = Roman('Le Comte de Monte-Cristo', 'Alexandre Dumas', 'Aventure');
 
-  void afficherInfos() {
-    print('Titre: $titre, Auteur: $auteur');
-  }
+  l1.afficherInfos();
+  l2.afficherInfos();
 
-  static void afficherTotalLivres() {
-    print('Total de livres créés: $totalLivres');
-  }
-int get pages => _pages;
-
-  void afficherInfos() {
-    print('Titre: $titre, Auteur: $auteur');
-  }
-
-  static void afficherTotalLivres() {
-    print('Total de livres créés: $totalLivres');
-  }
-  }
-
+  Livre.afficherTotalLivres();
+}
