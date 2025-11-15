@@ -14,3 +14,19 @@ class ServeurAPI implements Connectable {
     print('BaseDeDonnees : Utilisateur $utilisateur connecté.');
   }
   }
+  @override
+  void deconnecter() {
+    print('BaseDeDonnees : Déconnexion effectuée.');
+  }
+
+void main() {
+  var services = <Connectable>[
+    ServeurAPI(),
+    BaseDeDonnees()
+  ];
+
+  for (var service in services) {
+    service.connecter('Alice');
+    service.deconnecter();
+  }
+}
